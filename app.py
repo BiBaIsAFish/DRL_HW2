@@ -41,7 +41,7 @@ def choose_action(state, q_table, epsilon):
 # 2. 演算法訓練 (使用 st.cache_data 避免重複運算)
 # ==========================================
 @st.cache_data(show_spinner=False)
-def train_agents(episodes=500, runs=50, alpha=0.5, gamma=0.9, epsilon=0.1):
+def train_agents(episodes=500, runs=50, alpha=0.3, gamma=0.9, epsilon=0.1):
     all_sarsa_rewards = np.zeros(episodes)
     all_q_rewards = np.zeros(episodes)
     final_sarsa_q, final_q_q = None, None
@@ -180,4 +180,4 @@ ax_curve.grid(True)
 
 st.pyplot(fig_curve)
 
-st.success("🎉 運算完成！現在你可以將這個畫面直接截圖放入作業報告中，或是錄影展示你的實作成果。")
+st.success("🎉 運算完成！")
